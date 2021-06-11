@@ -1,0 +1,13 @@
+CREATE TABLE users (
+	user_name text NOT NULL,
+	"password" text NULL,
+	role_code int2 NULL,
+	CONSTRAINT users_pkey PRIMARY KEY (user_name),
+	CONSTRAINT users_role_code_fkey FOREIGN KEY (role_code) REFERENCES roles(role_code)
+);
+
+CREATE TABLE roles (
+	role_code int2 NOT NULL,
+	role_description text NULL,
+	CONSTRAINT role_pkey PRIMARY KEY (role_code)
+);
